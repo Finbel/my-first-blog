@@ -1,19 +1,13 @@
-<html>
-    <head>
-        <title>Avalon!</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="https://www.youtube.com/watch?v=OsT-s-OEDzg">#PCMASTERRACE</a></h1>
-        </div>
+{% extends 'blog/base.html' %}
 
-        {% for post in posts %}
-            <div>
-            <p>published: {{ post.published_date }}</p>
-            <h1><a href="www.helgon.se">{{ post.title}}</a></h1>
-            <p>{{ post.text|linebreaks }}</p>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
             </div>
-        {% endfor %}
-
-    </body>
-</html>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
