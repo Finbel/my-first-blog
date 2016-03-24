@@ -21,5 +21,5 @@ from django.contrib.auth.views import login
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
-    url(r'^accounts/login/$', login, {'template_name': 'login.html'})
+    url(r'^accounts/login/$', login, {'template_name': 'blog/login.html'})
 ]
