@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Puny mortal! One does not simply look at posts unless logged in.</h1>
 
-<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+<form method="post" action="{% url 'django.contrib.auth.views.login' %}?next={{ request.GET.next }}">
 {% csrf_token %}
 <table>
 	<tr>
