@@ -1,7 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h1>Puny mortal! One does not simply look at posts unless logged in.</h1>
+
+{% if form.errors %}
+	<h1>You're Tearing Me Apart, Lisa! Please try again.</h1>
+{% else %}
+	<h1>Puny mortal! One does not simply look at posts unless logged in.</h1>
+{% endif %}
 
 <form method="post" action="{% url 'django.contrib.auth.views.login' %}?next={{ request.GET.next }}">
 {% csrf_token %}
