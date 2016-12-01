@@ -25,7 +25,7 @@ SECRET_KEY = '6i&s^p*z1^cq**t=ugt^fb&u(r&^de!e4@k)p%h-y-3cm7izg@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','finbel.pythonanywhere.com']
 
 
 # Application definition
